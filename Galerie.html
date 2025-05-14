@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Galerie Photos - Association Nou lé là</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #fdfdfd;
+    }
+
+    header {
+      background-color: #4CAF50;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 2em;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+      padding: 30px;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.03);
+    }
+
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+    }
+
+    .lightbox:target {
+      display: flex;
+    }
+
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 15px;
+    }
+
+    /* Footer fixé */
+#footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #111;
+  color: #ffffff;
+  text-align: center;
+  padding: 20px 0;
+  z-index: 1000;
+}
+
+.contact-link {
+  color: #aaa;
+  text-decoration: none;
+  margin-left: 8px;
+  margin-right: 10px; /* Laisse de l'espace avant l'icône Facebook */
+  transition: color 0.3s;
+}
+
+.contact-link:hover {
+  color: #fff;
+}
+
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Galerie Photos</h1>
+</header>
+
+<section class="gallery">
+  
+    <a href="#img1"><img src="images/photo1.jpg" alt="Photo 1"></a>
+  <a href="#img2"><img src="images/photo2.jpg" alt="Photo 2"></a>
+  <a href="#img3"><img src="images/photo3.jpg" alt="Photo 3"></a>
+  <a href="#img4"><img src="images/photo4.jpg" alt="Photo 4"></a>
+  <a href="#img5"><img src="images/photo5.jpg" alt="Photo 5"></a>
+  <a href="#img6"><img src="images/photo6.jpg" alt="Photo 6"></a>
+  <a href="#img7"><img src="images/photo7.jpg" alt="Photo 7"></a>
+  <a href="#img8"><img src="images/photo8.jpg" alt="Photo 8"></a>
+  <a href="#img9"><img src="images/photo9.jpg" alt="Photo 9"></a>
+  <a href="#img10"><img src="images/photo10.jpg" alt="Photo 10"></a>
+  <a href="#img11"><img src="images/photo11.jpg" alt="Photo 11"></a>
+  <a href="#img12"><img src="images/photo12.jpg" alt="Photo 12"></a>
+  <a href="#img13"><img src="images/photo13.jpg" alt="Photo 13"></a>
+  <a href="#img14"><img src="images/photo14.jpg" alt="Photo 14"></a>
+  <a href="#img15"><img src="images/photo15.jpg" alt="Photo 15"></a>
+  <!-- Ajoute autant de photos que tu veux -->
+</section>
+
+<!-- Lightbox simple -->
+<div id="img1" class="lightbox"><a href="#"><img src="images/photo1.jpg" alt="Agrandissement"></a></div>
+<div id="img2" class="lightbox"><a href="#"><img src="images/photo2.jpg" alt="Agrandissement"></a></div>
+<div id="img3" class="lightbox"><a href="#"><img src="images/photo3.jpg" alt="Agrandissement"></a></div>
+<div id="img4" class="lightbox"><a href="#"><img src="images/photo4.jpg" alt="Agrandissement"></a></div>
+<div id="img5" class="lightbox"><a href="#"><img src="images/photo5.jpg" alt="Agrandissement"></a></div>
+<div id="img6" class="lightbox"><a href="#"><img src="images/photo6.jpg" alt="Agrandissement"></a></div>
+<div id="img7" class="lightbox"><a href="#"><img src="images/photo7.jpg" alt="Agrandissement"></a></div>
+<div id="img8" class="lightbox"><a href="#"><img src="images/photo8.jpg" alt="Agrandissement"></a></div>
+<div id="img9" class="lightbox"><a href="#"><img src="images/photo9.jpg" alt="Agrandissement"></a></div>
+<div id="img10" class="lightbox"><a href="#"><img src="images/photo10.jpg" alt="Agrandissement"></a></div>
+<div id="img11" class="lightbox"><a href="#"><img src="images/photo11.jpg" alt="Agrandissement"></a></div>
+<div id="img12" class="lightbox"><a href="#"><img src="images/photo12.jpg" alt="Agrandissement"></a></div>
+<div id="img13" class="lightbox"><a href="#"><img src="images/photo13.jpg" alt="Agrandissement"></a></div>
+<div id="img14" class="lightbox"><a href="#"><img src="images/photo14.jpg" alt="Agrandissement"></a></div>
+<div id="img15" class="lightbox"><a href="#"><img src="images/photo15.jpg" alt="Agrandissement"></a></div>
+<footer>
+  © 2025 Association Nou lé là – Tous droits réservés <a href="mailto:contact@monsite.com" class="contact-link">Nous contacter</a>
+
+  <a href="https://www.facebook.com/association.nou.le.la" target="_blank" class="facebook-fixed-icon" aria-label="Facebook">
+      <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 48 48">
+        <path fill="#1877F2" d="M24 4C12.96 4 4 12.96 4 24c0 9.96 7.44 18.2 17.06 19.74V30.7h-5.14v-6.7h5.14v-5.1c0-5.08 3.03-7.9 7.67-7.9 2.22 0 4.53.4 4.53.4v4.96h-2.55c-2.51 0-3.3 1.55-3.3 3.14v4.5h5.61l-.9 6.7h-4.7v13.1C36.56 42.2 44 33.96 44 24c0-11.04-8.96-20-20-20z"/>
+        <path fill="#FFF" d="M30.03 30.7l.9-6.7h-5.61v-4.5c0-1.59.79-3.14 3.3-3.14h2.55V11.4s-2.31-.4-4.53-.4c-4.64 0-7.67 2.82-7.67 7.9v5.1h-5.14v6.7h5.14v13.04c1.04.17 2.1.26 3.18.26s2.14-.09 3.18-.26V30.7h4.7z"/>
+      </svg>
+    </a>
+  </div>
+</div>
+</footer>
+
+</body>
+</html>
