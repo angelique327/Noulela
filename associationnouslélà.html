@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Association Nou lé là </title>
+  <style>
+    /* Styles généraux - inchangés */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background-color: #f4f4f4;
+    }
+
+    header {
+      background-color: #4CAF50;
+      padding: 10px 0;
+      text-align: center;
+      color: white;
+    }
+
+    header nav a {
+      color: white;
+      text-decoration: none;
+      padding: 10px 20px;
+      font-size: 1.2em;
+    }
+
+    header nav a:hover {
+      background-color: #45a049;
+      border-radius: 5px;
+    }
+
+    /* Bannière */
+    #banniere-principale {
+      background-image: url(Asso\ imag\ banière.jpg);
+      background-size: cover;
+      background-position: center;
+      height: 500px;
+      text-align: center;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2.5em;
+      font-weight: bold;
+    }
+
+    /* Présentation */
+    #presentation {
+      padding: 30px;
+      text-align: center;
+      background-color: #ffffff;
+      margin-top: 20px;
+    }
+
+    #presentation h2 {
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+
+    #presentation p {
+      font-size: 1.1em;
+      color: #555;
+    }
+
+    .bloc {
+  margin-bottom: 20px;
+}
+#presentation h3 {
+  font-size: 2em; /* Agrandis à volonté */
+  font-weight: bold;
+  color: #222;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+
+
+    /* Dons */
+    #dons {
+      background-color: #e0f7fa;
+      padding: 30px;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    #dons h3 {
+      font-size: 2em;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    #dons input[type="range"] {
+      width: 100%;
+      max-width: 400px;
+      margin: 10px 0;
+    }
+
+    #dons p {
+      font-size: 1.2em;
+      color: #333;
+    }
+
+    footer {
+      background-color: #333;
+      color: white;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .evenements {
+      padding: 50px 20px;
+      display: flex;
+      justify-content: flex-end;
+      background-color: #fdfdfd;
+    }
+
+    .event-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      max-width: 340px;
+    }
+
+    .event-card {
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      position: relative;
+      text-align: left;
+      transition: transform 0.3s ease;
+      width: 320px;
+    }
+
+    .event-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .event-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 15px;
+      margin-bottom: 15px;
+    }
+
+    .event-card h3 {
+      margin-bottom: 10px;
+      color: #d62828;
+      font-size: 1.2em;
+    }
+
+    .event-card .date,
+    .event-card .lieu {
+      font-weight: bold;
+      margin-bottom: 5px;
+      color: #444;
+    }
+
+    .event-card .desc {
+      margin: 15px 0;
+      color: #555;
+      font-size: 0.95em;
+    }
+
+    .btn {
+      background-color: #0033a0;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 0.95em;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #001f5c;
+    }
+
+    .tag {
+      position: absolute;
+      top: -12px;
+      left: -12px;
+      background-color: #ffd700;
+      color: #000;
+      font-size: 0.8em;
+      padding: 6px 12px;
+      border-radius: 12px;
+      font-weight: bold;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .section-don {
+      background: linear-gradient(to right, #2e7d32, #66bb6a);
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .btn-don {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 24px;
+      background-color: #66bb6a;
+      color: white;
+      font-weight: bold;
+      font-size: 1.1em;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-don:hover {
+      background-color: #2e7d32;
+    }
+
+    .section-president {
+      background-color: #f5f5f5;
+      padding: 60px 20px;
+    }
+
+    .president-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 900px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .president-photo {
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .contenu-central {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+      padding: 60px 20px;
+      background-color: #fdfdfd;
+    }
+
+    .carousel-container {
+      max-width: 600px;
+      width: 100%;
+      height: 350px;
+      position: relative;
+      flex-shrink: 0;
+    }
+
+    .caroussel{
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .carousel img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+
+    .carousel img.active {
+      opacity: 1;
+    }
+
+    .carousel button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.4);
+      color: white;
+      border: none;
+      padding: 10px;
+      font-size: 1.5em;
+      cursor: pointer;
+      z-index: 2;
+    }
+
+    .carousel .prev {
+      left: 10px;
+    }
+
+    .carousel .next {
+      right: 10px;
+    }
+
+/* Footer fixé */
+#footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #111;
+  color: #ffffff;
+  text-align: center;
+  padding: 20px 0;
+  z-index: 1000;
+}
+
+.contact-link {
+  color: #aaa;
+  text-decoration: none;
+  margin-left: 8px;
+  margin-right: 10px; /* Laisse de l'espace avant l'icône Facebook */
+  transition: color 0.3s;
+}
+
+.contact-link:hover {
+  color: #fff;
+}
+
+/* ----------- Responsive Design ----------- */
+@media (max-width: 1024px) {
+  .contenu-central {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .carousel-container {
+    width: 100%;
+    max-width: 500px;
+  }
+
+  .event-grid {
+    max-width: 100%;
+    align-items: center;
+  }
+
+  header nav a {
+    padding: 10px;
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 768px) {
+  #banniere-principale {
+    font-size: 1.5em;
+    height: 300px;
+    padding: 20px;
+  }
+
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .carousel-container {
+    height: 250px;
+  }
+
+  .event-card {
+    width: 90%;
+  }
+
+  .president-container {
+    padding: 20px;
+  }
+
+  .president-photo {
+    width: 140px;
+    height: 140px;
+  }
+
+  .section-president p {
+    font-size: 1em;
+  }
+
+  #presentation h2, #dons h3 {
+    font-size: 1.5em;
+  }
+
+  #presentation p, #dons p {
+    font-size: 1em;
+  }
+
+  .btn-don {
+    padding: 10px 20px;
+    font-size: 1em;
+  }
+
+  footer {
+    font-size: 0.9em;
+    padding: 15px 10px;
+  }
+
+  .carousel button {
+    font-size: 1.2em;
+    padding: 8px;
+  }
+
+  .btn {
+    padding: 8px 16px;
+  }
+
+  .tag {
+    font-size: 0.7em;
+    padding: 5px 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  nav a {
+    display: block;
+    padding: 12px;
+    font-size: 1em;
+  }
+
+  .carousel-container {
+    height: 200px;
+  }
+
+  .event-card img {
+    height: 140px;
+  }
+
+  .btn, .btn-don {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .president-container {
+    text-align: center;
+  }
+}
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <a href="#banniere-principale">Accueil</a>
+      <a href="#presentation">Présentation</a>
+      <a href="#evenement">Événements</a>
+      <a href="Galerie.html">Galerie photos</a>
+      <a href="#dons">Dons</a>
+    </nav>
+  </header>
+
+  <section id="banniere-principale">
+    <h1>Bienvenue à l'Association Nou lé là !</h1>
+  </section>
+
+  <section id="presentation">
+    <h2>Qui sommes-nous ?</h2>
+    <p>Notre association a pour but de rassembler les personnes originaires de l'île de la Réunion. Nous organisons des événements, des rencontres culturelles et des actions pour soutenir nos membres et notre communauté. Rejoignez-nous pour découvrir la richesse de notre culture réunionnaise !</p>
+    
+    <div class="bloc">
+        <h3>Notre histoire</h3>
+        <p> <p>Tout a commencé lors d’un repas entre amis, loin de l’île intense. Entre un rougail saucisse et quelques notes de maloya, une idée est née : et si on créait un espace pour nous retrouver, partager, transmettre ce qui fait notre fierté ?
+            C’est ainsi qu’est née notre association. Pour faire vivre la culture réunionnaise ici, ensemble, à travers des rencontres, de la musique, de la cuisine et surtout : du partage.</p>
+      </div>
+    </div>
+</section>
+
+  <section id="evenement" class="contenu-central">
+    <!-- Carrousel à gauche -->
+    <div class="carousel-container">
+      <div class="carousel">
+        <img src="photo1.jpg" alt="Photo 1" class="active">
+        <img src="photo2.jpg" alt="Photo 2">
+        <img src="photo3.jpg" alt="Photo 3">
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
+      </div>
+    </div>
+  
+    <!-- Événement à droite -->
+    <div class="event-grid">
+      <div class="event-card">
+        <span class="tag">🎉 Événement</span>
+        <img src="picnic.jpg" alt="Pique-nique créole" />
+        <h3>Pique-nique partage Réunionnais</h3>
+        <p class="date">📅 Samedi 11 mai</p>
+        <p class="lieu">📍 Parc de Béziers</p>
+        <p class="desc">Apportez votre marmite, partagez un moment convivial autour de la musique réunionnaise !</p>
+        <button class="btn">Je participe</button>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section-president">
+    <div class="president-container">
+      <img src="Olivier Lebon.jpg" alt="Photo du président" class="president-photo" />
+      <div class="president-text">
+        <p>« Notre association est née de la volonté de faire vivre la culture réunionnaise à Béziers. Chaque don est un pas de plus vers ce rêve collectif. Merci pour votre soutien. »</p>
+        <p><strong>Olivier Lebon, Président de l'association</strong></p>
+      </div>
+    </div>
+  </section>
+
+ <section id="dons" section class="section-don">
+    <div class="don-content">
+      <h2>Soutenez notre association 🌿</h2>
+      <p>Vos dons nous permettent de créer des événements, promouvoir la culture réunionnaise et faire vivre notre communauté à Béziers.</p>
+      <a href="don.html" class="btn-don">Faire un don 🤝</a>
+    </div>
+  </section>
+  
+  <footer>
+    <div class="footer-content">
+    <p>&copy; 2025 Association Nou lé là - Tous droits réservés  <a href="mailto:contact@monsite.com" class="contact-link">Nous contacter</a>
+
+        <a href="https://www.facebook.com/association.nou.le.la" target="_blank" class="facebook-fixed-icon" aria-label="Facebook">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 48 48">
+              <path fill="#1877F2" d="M24 4C12.96 4 4 12.96 4 24c0 9.96 7.44 18.2 17.06 19.74V30.7h-5.14v-6.7h5.14v-5.1c0-5.08 3.03-7.9 7.67-7.9 2.22 0 4.53.4 4.53.4v4.96h-2.55c-2.51 0-3.3 1.55-3.3 3.14v4.5h5.61l-.9 6.7h-4.7v13.1C36.56 42.2 44 33.96 44 24c0-11.04-8.96-20-20-20z"/>
+              <path fill="#FFF" d="M30.03 30.7l.9-6.7h-5.61v-4.5c0-1.59.79-3.14 3.3-3.14h2.55V11.4s-2.31-.4-4.53-.4c-4.64 0-7.67 2.82-7.67 7.9v5.1h-5.14v6.7h5.14v13.04c1.04.17 2.1.26 3.18.26s2.14-.09 3.18-.26V30.7h4.7z"/>
+            </svg>
+          </a>
+        </div>
+  </div>
+</footer>
+
+      </p>
+  </footer>
+
+  <!-- Script carrousel -->
+  <script>
+    const images = document.querySelectorAll(".carousel img");
+    const prevBtn = document.querySelector(".carousel .prev");
+    const nextBtn = document.querySelector(".carousel .next");
+
+    let currentIndex = 0;
+
+    function showImage(index) {
+      images.forEach((img, i) => {
+        img.classList.toggle("active", i === index);
+      });
+    }
+
+    prevBtn.addEventListener("click", () => {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      showImage(currentIndex);
+    });
+
+    nextBtn.addEventListener("click", () => {
+      currentIndex = (currentIndex + 1) % images.length;
+      showImage(currentIndex);
+    });
+
+    showImage(currentIndex);
+  </script>
+  
+</body>
+
+</html>
+
+
