@@ -771,6 +771,34 @@
     showImage(currentIndex);
   </script>
   
+  <script>
+  const images = document.querySelectorAll('.carousel img');
+  const prevBtn = document.querySelector('.carousel .prev');
+  const nextBtn = document.querySelector('.carousel .next');
+  let index = 0;
+
+  function showImage(i) {
+    images.forEach(img => img.classList.remove('active'));
+    images[i].classList.add('active');
+  }
+
+  prevBtn.addEventListener('click', () => {
+    index = (index - 1 + images.length) % images.length;
+    showImage(index);
+  });
+
+  nextBtn.addEventListener('click', () => {
+    index = (index + 1) % images.length;
+    showImage(index);
+  });
+
+  // Auto défilement (facultatif)
+  setInterval(() => {
+    index = (index + 1) % images.length;
+    showImage(index);
+  }, 5000);
+</script>
+
 </body>
 
 </html>
