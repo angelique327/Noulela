@@ -6,449 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Association Nou lé là </title>
   <style>
-    /* Styles généraux - inchangés */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      background-color: #f4f4f4;
-    }
-
-    header {
-      background-color: #4CAF50;
-      padding: 10px 0;
-      text-align: center;
-      color: white;
-    }
-
-    header nav a {
-      color: white;
-      text-decoration: none;
-      padding: 10px 20px;
-      font-size: 1.2em;
-    }
-
-    header nav a:hover {
-      background-color: #45a049;
-      border-radius: 5px;
-    }
-
-    /* Bannière */
-    #banniere-principale {
-      background-image: url(Asso\ imag\ banière.jpg);
-      background-size: cover;
-      background-position: center;
-      height: 500px;
-      text-align: center;
-      color: white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 2.5em;
-      font-weight: bold;
-    }
-
-    /* Présentation */
-    #presentation {
-      padding: 30px;
-      text-align: center;
-      background-color: #ffffff;
-      margin-top: 20px;
-    }
-
-    #presentation h2 {
-      font-size: 2em;
-      margin-bottom: 20px;
-    }
-
-    #presentation p {
-      font-size: 1.1em;
-      color: #555;
-    }
-
-    .bloc {
-  margin-bottom: 20px;
-}
-#presentation h3 {
-  font-size: 2em; /* Agrandis à volonté */
-  font-weight: bold;
-  color: #222;
-  margin-top: 40px;
-  margin-bottom: 20px;
-}
-
-
-
-    /* Dons */
-    #dons {
-      background-color: #e0f7fa;
-      padding: 30px;
-      text-align: center;
-      margin-top: 20px;
-    }
-
-    #dons h3 {
-      font-size: 2em;
-      color: #333;
-      margin-bottom: 20px;
-    }
-
-    #dons input[type="range"] {
-      width: 100%;
-      max-width: 400px;
-      margin: 10px 0;
-    }
-
-    #dons p {
-      font-size: 1.2em;
-      color: #333;
-    }
-
-    footer {
-      background-color: #333;
-      color: white;
-      padding: 10px;
-      text-align: center;
-    }
-
-    .evenements {
-      padding: 50px 20px;
-      display: flex;
-      justify-content: flex-end;
-      background-color: #fdfdfd;
-    }
-
-    .event-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 30px;
-      max-width: 340px;
-    }
-
-    .event-card {
-      background: white;
-      border-radius: 20px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-      padding: 20px;
-      position: relative;
-      text-align: left;
-      transition: transform 0.3s ease;
-      width: 320px;
-    }
-
-    .event-card:hover {
-      transform: translateY(-5px);
-    }
-
-    .event-card img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-      border-radius: 15px;
-      margin-bottom: 15px;
-    }
-
-    .event-card h3 {
-      margin-bottom: 10px;
-      color: #d62828;
-      font-size: 1.2em;
-    }
-
-    .event-card .date,
-    .event-card .lieu {
-      font-weight: bold;
-      margin-bottom: 5px;
-      color: #444;
-    }
-
-    .event-card .desc {
-      margin: 15px 0;
-      color: #555;
-      font-size: 0.95em;
-    }
-
-    .btn {
-      background-color: #0033a0;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 10px;
-      cursor: pointer;
-      font-size: 0.95em;
-      transition: background 0.3s;
-    }
-
-    .btn:hover {
-      background-color: #001f5c;
-    }
-
-    .tag {
-      position: absolute;
-      top: -12px;
-      left: -12px;
-      background-color: #ffd700;
-      color: #000;
-      font-size: 0.8em;
-      padding: 6px 12px;
-      border-radius: 12px;
-      font-weight: bold;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    }
-
-    .section-don {
-      background: linear-gradient(to right, #2e7d32, #66bb6a);
-      color: white;
-      padding: 60px 20px;
-      text-align: center;
-    }
-
-    .btn-don {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 12px 24px;
-      background-color: #66bb6a;
-      color: white;
-      font-weight: bold;
-      font-size: 1.1em;
-      border-radius: 10px;
-      text-decoration: none;
-      transition: background-color 0.3s ease;
-    }
-
-    .btn-don:hover {
-      background-color: #2e7d32;
-    }
-
-    .section-president {
-      background-color: #f5f5f5;
-      padding: 60px 20px;
-    }
-
-    .president-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      max-width: 900px;
-      margin: auto;
-      text-align: center;
-    }
-
-    .president-photo {
-      width: 180px;
-      height: 180px;
-      object-fit: cover;
-      border-radius: 50%;
-      margin-bottom: 20px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    }
-
-    .contenu-central {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 40px;
-      padding: 60px 20px;
-      background-color: #fdfdfd;
-    }
-
-    .carousel-container {
-      max-width: 600px;
-      width: 100%;
-      height: 350px;
-      position: relative;
-      flex-shrink: 0;
-    }
-
-    .caroussel{
-  width: 100%;
-  height: 100%;
-  position: relative;
-  overflow: hidden;
-  border-radius: 20px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    }
-
-    .carousel img {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      opacity: 0;
-      transition: opacity 0.5s ease;
-    }
-
-    .carousel img.active {
-      opacity: 1;
-    }
-
-    .carousel button {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: rgba(0, 0, 0, 0.4);
-      color: white;
-      border: none;
-      padding: 10px;
-      font-size: 1.5em;
-      cursor: pointer;
-      z-index: 2;
-    }
-
-    .carousel .prev {
-      left: 10px;
-    }
-
-    .carousel .next {
-      right: 10px;
-    }
-
-/* Footer fixé */
-#footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  background-color: #111;
-  color: #ffffff;
-  text-align: center;
-  padding: 20px 0;
-  z-index: 1000;
-}
-
-.contact-link {
-  color: #aaa;
-  text-decoration: none;
-  margin-left: 8px;
-  margin-right: 10px; /* Laisse de l'espace avant l'icône Facebook */
-  transition: color 0.3s;
-}
-
-.contact-link:hover {
-  color: #fff;
-}
-
-/* ----------- Responsive Design ----------- */
-@media (max-width: 1024px) {
-  .contenu-central {
-    flex-direction: column;
-    align-items: center;
-    gap: 30px;
-  }
-
-  .carousel-container {
-    width: 100%;
-    max-width: 500px;
-  }
-
-  .event-grid {
-    max-width: 100%;
-    align-items: center;
-  }
-
-  header nav a {
-    padding: 10px;
-    font-size: 1em;
-  }
-}
-
-@media (max-width: 768px) {
-  #banniere-principale {
-    font-size: 1.5em;
-    height: 300px;
-    padding: 20px;
-  }
-
-  nav {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .carousel-container {
-    height: 250px;
-  }
-
-  .event-card {
-    width: 90%;
-  }
-
-  .president-container {
-    padding: 20px;
-  }
-
-  .president-photo {
-    width: 140px;
-    height: 140px;
-  }
-
-  .section-president p {
-    font-size: 1em;
-  }
-
-  #presentation h2, #dons h3 {
-    font-size: 1.5em;
-  }
-
-  #presentation p, #dons p {
-    font-size: 1em;
-  }
-
-  .btn-don {
-    padding: 10px 20px;
-    font-size: 1em;
-  }
-
-  footer {
-    font-size: 0.9em;
-    padding: 15px 10px;
-  }
-
-  .carousel button {
-    font-size: 1.2em;
-    padding: 8px;
-  }
-
-  .btn {
-    padding: 8px 16px;
-  }
-
-  .tag {
-    font-size: 0.7em;
-    padding: 5px 10px;
-  }
-}
-
-@media (max-width: 480px) {
-  nav a {
-    display: block;
-    padding: 12px;
-    font-size: 1em;
-  }
-
-  .carousel-container {
-    height: 200px;
-  }
-
-  .event-card img {
-    height: 140px;
-  }
-
-  .btn, .btn-don {
-    width: 100%;
-    box-sizing: border-box;
-  }
-
-  .president-container {
-    text-align: center;
-  }
-}
-
-<style>
-  /* Base mobile */
+  /* ----------- Base Générale ----------- */
   * {
     margin: 0;
     padding: 0;
@@ -463,92 +21,161 @@
 
   header {
     background-color: #4CAF50;
+    padding: 10px 0;
     text-align: center;
-    padding: 15px;
+    color: white;
+  }
+
+  header nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 1.2em;
+  }
+
+  header nav a:hover {
+    background-color: #45a049;
+    border-radius: 5px;
   }
 
   nav a {
     display: block;
-    color: white;
-    text-decoration: none;
     padding: 10px;
   }
 
-  nav a:hover {
-    background-color: #388e3c;
-  }
-
+  /* ----------- Bannière ----------- */
   #banniere-principale {
     background: url('Asso imag banière.jpg') center/cover no-repeat;
-    height: 300px;
+    height: 500px;
     display: flex;
     justify-content: center;
     align-items: center;
     color: white;
-    font-size: 1.5em;
+    font-size: 2.5em;
+    font-weight: bold;
     text-align: center;
     padding: 20px;
   }
 
-  section {
-    padding: 20px;
-  }
-
-  .bloc {
+  /* ----------- Présentation ----------- */
+  #presentation {
+    padding: 30px;
+    text-align: center;
+    background-color: #ffffff;
     margin-top: 20px;
   }
 
-  .event-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+  #presentation h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
   }
 
-  .event-card {
-    background: white;
-    border-radius: 12px;
-    padding: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  #presentation h3 {
+    font-size: 2em;
+    font-weight: bold;
+    color: #222;
+    margin-top: 40px;
+    margin-bottom: 20px;
   }
 
-  .event-card img {
+  #presentation p {
+    font-size: 1.1em;
+    color: #555;
+  }
+
+  .bloc {
+    margin-bottom: 20px;
+  }
+
+  /* ----------- Dons ----------- */
+  #dons {
+    background-color: #e0f7fa;
+    padding: 30px;
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  #dons h3 {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 20px;
+  }
+
+  #dons input[type="range"] {
     width: 100%;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 10px;
+    max-width: 400px;
+    margin: 10px 0;
   }
 
-  .btn {
-    background-color: #0033a0;
+  #dons p {
+    font-size: 1.2em;
+    color: #333;
+  }
+
+  .section-don {
+    background: linear-gradient(to right, #2e7d32, #66bb6a);
     color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 8px;
-    margin-top: 10px;
-    width: 100%;
-  }
-
-  .section-president {
+    padding: 60px 20px;
     text-align: center;
   }
 
-  .president-photo {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
+  .btn-don {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 24px;
+    background-color: #66bb6a;
+    color: white;
+    font-weight: bold;
+    font-size: 1.1em;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+
+  .btn-don:hover {
+    background-color: #2e7d32;
+  }
+
+  /* ----------- Président ----------- */
+  .section-president {
+    background-color: #f5f5f5;
+    padding: 60px 20px;
+    text-align: center;
+  }
+
+  .president-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 900px;
     margin: auto;
   }
 
+  .president-photo {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  /* ----------- Carrousel ----------- */
   .carousel-container {
+    max-width: 600px;
     width: 100%;
+    height: 350px;
+    position: relative;
+    flex-shrink: 0;
     overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
   }
 
   .carousel {
     position: relative;
     width: 100%;
-    height: 200px;
+    height: 100%;
   }
 
   .carousel img {
@@ -557,7 +184,7 @@
     height: 100%;
     object-fit: cover;
     opacity: 0;
-    transition: opacity 0.4s ease-in-out;
+    transition: opacity 0.5s ease;
   }
 
   .carousel img.active {
@@ -571,9 +198,10 @@
     background: rgba(0, 0, 0, 0.4);
     color: white;
     border: none;
-    padding: 8px;
+    padding: 10px;
     font-size: 1.5em;
     cursor: pointer;
+    z-index: 2;
   }
 
   .carousel .prev {
@@ -584,18 +212,233 @@
     right: 10px;
   }
 
-  footer {
+  /* ----------- Événements ----------- */
+  .evenements {
+    padding: 50px 20px;
+    display: flex;
+    justify-content: flex-end;
+    background-color: #fdfdfd;
+  }
+
+  .event-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    max-width: 340px;
+  }
+
+  .event-card {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    position: relative;
+    text-align: left;
+    transition: transform 0.3s ease;
+    width: 320px;
+  }
+
+  .event-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .event-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-bottom: 15px;
+  }
+
+  .event-card h3 {
+    margin-bottom: 10px;
+    color: #d62828;
+    font-size: 1.2em;
+  }
+
+  .event-card .date,
+  .event-card .lieu {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #444;
+  }
+
+  .event-card .desc {
+    margin: 15px 0;
+    color: #555;
+    font-size: 0.95em;
+  }
+
+  .tag {
+    position: absolute;
+    top: -12px;
+    left: -12px;
+    background-color: #ffd700;
+    color: #000;
+    font-size: 0.8em;
+    padding: 6px 12px;
+    border-radius: 12px;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .btn {
+    background-color: #0033a0;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 0.95em;
+    transition: background 0.3s;
+  }
+
+  .btn:hover {
+    background-color: #001f5c;
+  }
+
+  /* ----------- Footer ----------- */
+  #footer, footer {
     background-color: #111;
     color: white;
     text-align: center;
-    padding: 15px;
+    padding: 20px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 1000;
   }
 
-  .facebook-fixed-icon svg {
-    margin-top: 10px;
+  .contact-link {
+    color: #aaa;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s;
   }
 
-  /* -------- Media Queries pour écrans plus larges -------- */
+  .contact-link:hover {
+    color: #fff;
+  }
+
+  /* ----------- Responsive Design ----------- */
+  @media (max-width: 1024px) {
+    .contenu-central {
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .carousel-container {
+      width: 100%;
+      max-width: 500px;
+    }
+
+    .event-grid {
+      max-width: 100%;
+      align-items: center;
+    }
+
+    header nav a {
+      padding: 10px;
+      font-size: 1em;
+    }
+  }
+
+  @media (max-width: 768px) {
+    #banniere-principale {
+      font-size: 1.5em;
+      height: 300px;
+      padding: 20px;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .carousel-container {
+      height: 250px;
+    }
+
+    .event-card {
+      width: 90%;
+    }
+
+    .president-container {
+      padding: 20px;
+    }
+
+    .president-photo {
+      width: 140px;
+      height: 140px;
+    }
+
+    .section-president p {
+      font-size: 1em;
+    }
+
+    #presentation h2,
+    #dons h3 {
+      font-size: 1.5em;
+    }
+
+    #presentation p,
+    #dons p {
+      font-size: 1em;
+    }
+
+    .btn-don {
+      padding: 10px 20px;
+      font-size: 1em;
+    }
+
+    footer {
+      font-size: 0.9em;
+      padding: 15px 10px;
+    }
+
+    .carousel button {
+      font-size: 1.2em;
+      padding: 8px;
+    }
+
+    .btn {
+      padding: 8px 16px;
+    }
+
+    .tag {
+      font-size: 0.7em;
+      padding: 5px 10px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    nav a {
+      display: block;
+      padding: 12px;
+      font-size: 1em;
+    }
+
+    .carousel-container {
+      height: 200px;
+    }
+
+    .event-card img {
+      height: 140px;
+    }
+
+    .btn,
+    .btn-don {
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .president-container {
+      text-align: center;
+    }
+  }
+
   @media (min-width: 768px) {
     nav {
       display: flex;
@@ -645,7 +488,7 @@
       font-size: 2.5em;
     }
   }
-  </style>
+</style>
 </head>
 
 <body>
@@ -680,19 +523,20 @@
     <div class="carousel-container">
       <div class="carousel">
         <img src="img1.JPG" alt="Photo 1" class="active">
-        <img src="img2.JPG" alt="Photo 2">
-        <img src="img3.JPG" alt="Photo 3">
-        <img src="img4.JPG" alt="Photo 4">
-        <img src="img5.JPG" alt="Photo 5">
-        <img src="img6.JPG" alt="Photo 6">
-        <img src="img7.JPG" alt="Photo 7">
-        <img src="img8.JPG" alt="Photo 8">
-        <img src="img9.JPG" alt="Photo 9">
-        <img src="img10.JPG" alt="Photo 10">
+        <img src="img2.JPG" alt="Photo 2"class="active">
+        <img src="img3.JPG" alt="Photo 3" class="active">
+        <img src="img4.JPG" alt="Photo 4" class="active">
+        <img src="img5.JPG" alt="Photo 5" class="active">
+        <img src="img6.JPG" alt="Photo 6" class="active">
+        <img src="img7.JPG" alt="Photo 7" class="active">
+        <img src="img8.JPG" alt="Photo 8" class="active">
+        <img src="img9.JPG" alt="Photo 9"class="active">
+        <img src="img10.JPG" alt="Photo 10"class="active">
         <button class="prev">&#10094;</button>
         <button class="next">&#10095;</button>
       </div>
     </div>
+    </section>
   
     <!-- Événement à droite -->
     <div class="event-grid">
@@ -744,60 +588,43 @@
       </p>
   </footer>
 
-  <!-- Script carrousel -->
   <script>
-    const images = document.querySelectorAll(".carousel img");
-    const prevBtn = document.querySelector(".carousel .prev");
-    const nextBtn = document.querySelector(".carousel .next");
+  // Sélectionner les éléments
+  const images = document.querySelectorAll(".carousel img");
+  const prevBtn = document.querySelector(".carousel .prev");
+  const nextBtn = document.querySelector(".carousel .next");
 
-    let currentIndex = 0;
+  let currentIndex = 0;
 
-    function showImage(index) {
-      images.forEach((img, i) => {
-        img.classList.toggle("active", i === index);
-      });
-    }
-
-    prevBtn.addEventListener("click", () => {
-      currentIndex = (currentIndex - 1 + images.length) % images.length;
-      showImage(currentIndex);
+  // Fonction pour afficher l'image active
+  function showImage(index) {
+    images.forEach((img, i) => {
+      img.classList.remove("active");  // Retirer la classe 'active' de toutes les images
+      if (i === index) {
+        img.classList.add("active");  // Ajouter la classe 'active' à l'image correspondante
+      }
     });
-
-    nextBtn.addEventListener("click", () => {
-      currentIndex = (currentIndex + 1) % images.length;
-      showImage(currentIndex);
-    });
-
-    showImage(currentIndex);
-  </script>
-  
-  <script>
-  const images = document.querySelectorAll('.carousel img');
-  const prevBtn = document.querySelector('.carousel .prev');
-  const nextBtn = document.querySelector('.carousel .next');
-  let index = 0;
-
-  function showImage(i) {
-    images.forEach(img => img.classList.remove('active'));
-    images[i].classList.add('active');
   }
 
-  prevBtn.addEventListener('click', () => {
-    index = (index - 1 + images.length) % images.length;
-    showImage(index);
+  // Écouteur d'événements pour le bouton précédent
+  prevBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;  // Calculer l'index de l'image précédente
+    showImage(currentIndex);  // Afficher l'image à l'index calculé
   });
 
-  nextBtn.addEventListener('click', () => {
-    index = (index + 1) % images.length;
-    showImage(index);
+  // Écouteur d'événements pour le bouton suivant
+  nextBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % images.length;  // Calculer l'index de l'image suivante
+    showImage(currentIndex);  // Afficher l'image à l'index calculé
   });
 
-  // Auto défilement (facultatif)
+  // Auto-défilement des images (facultatif)
   setInterval(() => {
-    index = (index + 1) % images.length;
-    showImage(index);
-  }, 5000);
+    currentIndex = (currentIndex + 1) % images.length;  // Passer à l'image suivante
+    showImage(currentIndex);  // Afficher l'image suivante
+  }, 5000);  // Intervalle de 5 secondes
 </script>
+
 
 </body>
 
