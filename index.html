@@ -162,14 +162,15 @@
 
   /* ----------- Carrousel ----------- */
   .carousel-container {
-    max-width: 600px;
     width: 100%;
-    height: 350px;
-    position: relative;
-    flex-shrink: 0;
-    overflow: hidden;
-    border-radius: 20px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    height: auto;
+    display:block;
+    object-fit:contain;
+    opacity: 0;
+    transition: opacity 0.5 ease;
+    position:absolute;
+    top: 0;
+    left: 0;
   }
 
   .carousel {
@@ -187,7 +188,7 @@
     transition: opacity 0.5s ease;
   }
 
-  .carousel img.active {
+  .carousel-container img.active {
     opacity: 1;
   }
 
@@ -202,15 +203,6 @@
     font-size: 1.5em;
     cursor: pointer;
     z-index: 2;
-  }
-
-   .carousel img {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0;
-    transition: opacity 0.5s ease;
   }
 
   .carousel img.active {
@@ -351,8 +343,10 @@
     }
 
     .carousel-container {
-      width: 100%;
       max-width: 500px;
+      margin: 0 auto;
+      overflow:hidden;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     }
 
     .event-grid {
@@ -598,7 +592,7 @@
     </div>
   </section>
 
- <section id="dons" section class="section-don">
+ <section id="dons" class="section-don">
     <div class="don-content">
       <h2>Soutenez notre association 🌿</h2>
       <p>Vos dons nous permettent de créer des événements, promouvoir la culture réunionnaise et faire vivre notre communauté à Béziers.</p>
