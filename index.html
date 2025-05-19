@@ -162,39 +162,36 @@
 
   /* ----------- Carrousel ----------- */
   .carousel-container {
+    max-width: 600px;
     width: 100%;
-    height: auto;
-    display:block;
-    object-fit:contain;
-    opacity: 0;
-    transition: opacity 0.5 ease;
-    position:absolute;
-    top: 0;
-    left: 0;
+    height: 350px;
+    position: relative;
+    flex-shrink: 0;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
   }
 
   .carousel {
     position: relative;
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-  position: absolute;
+    height: 400%;
   }
 
   .carousel img {
     position: absolute;
-    width: auto;
+    width: 100%;
     height: 100%;
     object-fit: cover;
     opacity: 0;
     transition: opacity 0.5s ease;
   }
 
-  .carousel-container img.active {
+  .carousel img.active {
     opacity: 1;
   }
 
-  .carousel button.prev, button.next {
+  .carousel button {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -202,9 +199,18 @@
     color: white;
     border: none;
     padding: 10px;
-    font-size: 24px; ;
+    font-size: 1.5em;
     cursor: pointer;
     z-index: 2;
+  }
+
+   .carousel img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.5s ease;
   }
 
   .carousel img.active {
@@ -212,9 +218,12 @@
   }
 
    .carousel img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     opacity: 0;
     transition: opacity 0.5s ease;
-    position: absolute;
   }
 
   .carousel .prev {
@@ -342,10 +351,8 @@
     }
 
     .carousel-container {
+      width: 100%;
       max-width: 500px;
-      margin: 0 auto;
-      overflow:hidden;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     }
 
     .event-grid {
@@ -488,13 +495,34 @@
       margin: auto;
     }
 
-    .event-card {
-      width: 250px;
+    .president-photo {
+      margin: 0;
+    }
+
+    .btn {
+      width: auto;
     }
   }
 
+  @media (min-width: 1024px) {
+    #banniere-principale {
+      height: 500px;
+      font-size: 2.5em;
+    }
+  }
 
-  </style>
+  .carousel img {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  position: absolute;
+  border: 2px solid red; /* debug visuel temporaire */
+}
+
+.carousel img.active {
+  opacity: 1;
+}
+
+</style>
 </head>
 
 <body>
@@ -518,9 +546,11 @@
     
     <div class="bloc">
         <h3>Notre histoire</h3>
-        <p>Tout a commencé lors d’un repas entre amis, loin de l’île intense. Entre un rougail saucisse et quelques notes de maloya, une idée est née : et si on créait un espace pour nous retrouver, partager, transmettre ce qui fait notre fierté ?</p>
+        <p>Tout a commencé lors d’un repas entre amis, loin de l’île intense. Entre un rougail saucisse et quelques notes de maloya, une idée est née : et si on créait un espace pour nous retrouver, partager, transmettre ce qui fait notre fierté ?
+            C’est ainsi qu’est née notre association. Pour faire vivre la culture réunionnaise ici, ensemble, à travers des rencontres, de la musique, de la cuisine et surtout : du partage.</p>
+      </div>
     </div>
-  </section>
+</section>
 
  <section id="evenement" class="contenu-central">
   <!-- Carrousel à gauche -->
@@ -528,60 +558,71 @@
     <div class="carousel">
       <img src="img1.JPG" alt="Photo 1" class="active">
       <img src="img2.JPG" alt="Photo 2"> 
-      <img src="img3.JPG" alt="Photo 3">
-      <img src="img4.JPG" alt="Photo 4">
-      <img src="img5.JPG" alt="Photo 5">
+      <img src="img3.JPG" alt="Photo 3" >
+      <img src="img4.JPG" alt="Photo 4" >
+      <img src="img5.JPG" alt="Photo 5" >
       <img src="img6.JPG" alt="Photo 6"> 
-      <img src="img7.JPG" alt="Photo 7">
-      <img src="img8.JPG" alt="Photo 8">
-      <img src="img9.JPG" alt="Photo 9">
-      <img src="img10.JPG" alt="Photo 10">
+      <img src="img7.JPG" alt="Photo 7" >
+      <img src="img8.JPG" alt="Photo 8" >
+      <img src="img9.JPG" alt="Photo 9" >
+      <img src="img10.JPG" alt="Photo 10" >
      <button class="prev">❮</button>
      <button class="next">❯</button>
     </div>
   </div>
 </section>
 
-  <!-- Événements à droite -->
-  <div class="event-grid">
-    <div class="event-card">
-      <span class="tag">🎉 Événement</span>
-      <img src="picnic.jpg" alt="Pique-nique créole" />
-      <h3>Pique-nique partage Réunionnais</h3>
-      <p class="date">📅 Samedi 11 mai</p>
-      <p class="lieu">📍 Parc de Béziers</p>
-      <p class="desc">Apportez votre marmite, partagez un moment convivial autour de la musique réunionnaise !</p>
-      <button class="btn">Je participe</button>
-    </div>
-  </div>
-
-      <div class="bloc">
-      <div class="president-container">
-        <img src="Olivier Lebon.jpg" alt="Président" class="president-photo">
-        <p style="font-size: 1.2em; max-width: 800px; margin: 0 auto;"> "Notre association est née de la volonté de faire vivre la culture réunionnaise à Béziers. Chaque don est un pas de plus vers ce rêve collectif. Merci pour votre soutien. "</p>
-        <strong>Olivier Lebon, Président de l'association</strong>
+  
+    <!-- Événement à droite -->
+    <div class="event-grid">
+      <div class="event-card">
+        <span class="tag">🎉 Événement</span>
+        <img src="picnic.jpg" alt="Pique-nique créole" />
+        <h3>Pique-nique partage Réunionnais</h3>
+        <p class="date">📅 Samedi 11 mai</p>
+        <p class="lieu">📍 Parc de Béziers</p>
+        <p class="desc">Apportez votre marmite, partagez un moment convivial autour de la musique réunionnaise !</p>
+        <button class="btn">Je participe</button>
       </div>
     </div>
   </section>
 
-  <section id="dons" style="background-color: #4caf50; color: rgb(140, 226, 145); padding: 40px; text-align: center;">
-  <h3 style="font-size: 2em;">
-    <h3>Soutenez notre association 🌱</h3>
-    <p>Vos dons nous permettent de créer des événements, promouvoir la culture réunionnaise et faire vivre notre communauté à Béziers.</p>
-    <a href="https://www.helloasso.com/associations/association-nou-le-la-974/adhesions/adhesion" class="btn-don"> 🤝 Faire un don</a>
+
+  <section class="section-president">
+    <div class="president-container">
+      <img src="Olivier Lebon.jpg" alt="Photo du président" class="president-photo" />
+      <div class="president-text">
+        <p>« Notre association est née de la volonté de faire vivre la culture réunionnaise à Béziers. Chaque don est un pas de plus vers ce rêve collectif. Merci pour votre soutien. »</p>
+        <p><strong>Olivier Lebon, Président de l'association</strong></p>
+      </div>
+    </div>
   </section>
 
-   <footer>
-    <p>&copy; 2025 Association Nou lé là | <a href="mailto:contact@asnonlela.com" class="contact-link">Contact</a> | <a href="https://www.facebook.com/association.nou.le.la" class="contact-link">Facebook</a></p>
-  </footer>
+ <section id="dons" section class="section-don">
+    <div class="don-content">
+      <h2>Soutenez notre association 🌿</h2>
+      <p>Vos dons nous permettent de créer des événements, promouvoir la culture réunionnaise et faire vivre notre communauté à Béziers.</p>
+      <a href="don.html" class="btn-don">Faire un don 🤝</a>
+    </div>
+  </section>
+  
+  <footer>
+    <div class="footer-content">
+    <p>&copy; 2025 Association Nou lé là - Tous droits réservés  <a href="mailto:contact@monsite.com" class="contact-link">Nous contacter</a>
 
-  <div class="facebook-fixed-icon">
-    <a href="https://www.facebook.com/association.nou.le.la" target="_blank">
-      <img src="facebook-icon.png" alt="Facebook" width="30">
-    </a>
+        <a href="https://www.facebook.com/association.nou.le.la" target="_blank" class="facebook-fixed-icon" aria-label="Facebook">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 48 48">
+              <path fill="#1877F2" d="M24 4C12.96 4 4 12.96 4 24c0 9.96 7.44 18.2 17.06 19.74V30.7h-5.14v-6.7h5.14v-5.1c0-5.08 3.03-7.9 7.67-7.9 2.22 0 4.53.4 4.53.4v4.96h-2.55c-2.51 0-3.3 1.55-3.3 3.14v4.5h5.61l-.9 6.7h-4.7v13.1C36.56 42.2 44 33.96 44 24c0-11.04-8.96-20-20-20z"/>
+              <path fill="#FFF" d="M30.03 30.7l.9-6.7h-5.61v-4.5c0-1.59.79-3.14 3.3-3.14h2.55V11.4s-2.31-.4-4.53-.4c-4.64 0-7.67 2.82-7.67 7.9v5.1h-5.14v6.7h5.14v13.04c1.04.17 2.1.26 3.18.26s2.14-.09 3.18-.26V30.7h4.7z"/>
+            </svg>
+          </a>
+        </div>
   </div>
+</footer>
+  
 
 <script>
+  console.log("Script chargé");
   const images = document.querySelectorAll(".carousel img");
   const prevBtn = document.querySelector(".carousel .prev");
   const nextBtn = document.querySelector(".carousel .next");
@@ -611,4 +652,5 @@
   }, 5000); // change toutes les 5 sec
 </script>
 </body>
+
 </html>
