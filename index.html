@@ -43,158 +43,35 @@
     padding: 10px;
   }
 
-  /* ----------- Bannière ----------- */
-  #banniere-principale {
-    background: url('Asso imag banière.jpg') center/cover no-repeat;
-    height: 500px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-size: 2.5em;
-    font-weight: bold;
-    text-align: center;
-    padding: 20px;
-  }
-
-  /* ----------- Présentation ----------- */
-  #presentation {
-    padding: 30px;
-    text-align: center;
-    background-color: #ffffff;
-    margin-top: 20px;
-  }
-
-  #presentation h2 {
-    font-size: 2em;
-    margin-bottom: 20px;
-  }
-
-  #presentation h3 {
-    font-size: 2em;
-    font-weight: bold;
-    color: #222;
-    margin-top: 40px;
-    margin-bottom: 20px;
-  }
-
-  #presentation p {
-    font-size: 1.1em;
-    color: #555;
-  }
-
-  .bloc {
-    margin-bottom: 20px;
-  }
-
-  /* ----------- Dons ----------- */
-  #dons {
-    background-color: #e0f7fa;
-    padding: 30px;
-    text-align: center;
-    margin-top: 20px;
-  }
-
-  #dons h3 {
-    font-size: 2em;
-    color: #333;
-    margin-bottom: 20px;
-  }
-
-  #dons input[type="range"] {
-    width: 100%;
-    max-width: 400px;
-    margin: 10px 0;
-  }
-
-  #dons p {
-    font-size: 1.2em;
-    color: #333;
-  }
-
-  .section-don {
-    background: linear-gradient(to right, #2e7d32, #66bb6a);
-    color: white;
-    padding: 60px 20px;
-    text-align: center;
-  }
-
-  .btn-don {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 12px 24px;
-    background-color: #66bb6a;
-    color: white;
-    font-weight: bold;
-    font-size: 1.1em;
-    border-radius: 10px;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-  }
-
-  .btn-don:hover {
-    background-color: #2e7d32;
-  }
-
-  /* ----------- Président ----------- */
-  .section-president {
-    background-color: #f5f5f5;
-    padding: 60px 20px;
-    text-align: center;
-  }
-
-  .president-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 900px;
-    margin: auto;
-  }
-
-  .president-photo {
-    width: 180px;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 50%;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  }
-
   /* ----------- Carrousel ----------- */
   .carousel-container {
     width: 100%;
-    height: auto;
-    display:block;
-    object-fit:contain;
-    opacity: 0;
-    transition: opacity 0.5 ease;
-    position:absolute;
-    top: 0;
-    left: 0;
+    height: 400px;
+    position: relative;
+    overflow: hidden;
+    background-color: #eee;
   }
 
   .carousel {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  position: absolute;
+    display: flex;
+    transition: transform 0.5s ease;
   }
 
   .carousel img {
-    position: absolute;
     width: 100%;
     height: 100%;
     object-fit: cover;
     opacity: 0;
     transition: opacity 0.5s ease;
+    position: absolute;
   }
 
-  .carousel-container img.active {
+  .carousel img.active {
     opacity: 1;
   }
 
-  .carousel button {
+  .carousel button.prev,
+  .carousel button.next {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -202,19 +79,9 @@
     color: white;
     border: none;
     padding: 10px;
-    font-size: 1.5em;
+    font-size: 24px;
     cursor: pointer;
     z-index: 2;
-  }
-
-  .carousel img.active {
-    opacity: 1;
-  }
-
-   .carousel img {
-    opacity: 0;
-    transition: opacity 0.5s ease;
-    position: absolute;
   }
 
   .carousel .prev {
@@ -309,213 +176,7 @@
   .btn:hover {
     background-color: #001f5c;
   }
-
-  /* ----------- Footer ----------- */
-  #footer, footer {
-    background-color: #111;
-    color: white;
-    text-align: center;
-    padding: 20px 0;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    z-index: 1000;
-  }
-
-  .contact-link {
-    color: #aaa;
-    text-decoration: none;
-    margin: 0 10px;
-    transition: color 0.3s;
-  }
-
-  .contact-link:hover {
-    color: #fff;
-  }
-
-  /* ----------- Responsive Design ----------- */
-  @media (max-width: 1024px) {
-    .contenu-central {
-      flex-direction: column;
-      align-items: center;
-      gap: 30px;
-    }
-
-    .carousel-container {
-      max-width: 500px;
-      margin: 0 auto;
-      overflow:hidden;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    }
-
-    .event-grid {
-      max-width: 100%;
-      align-items: center;
-    }
-
-    header nav a {
-      padding: 10px;
-      font-size: 1em;
-    }
-  }
-
-  @media (max-width: 768px) {
-    #banniere-principale {
-      font-size: 1.5em;
-      height: 300px;
-      padding: 20px;
-    }
-
-    nav {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .carousel-container {
-      height: 250px;
-    }
-
-    .event-card {
-      width: 90%;
-    }
-
-    .president-container {
-      padding: 20px;
-    }
-
-    .president-photo {
-      width: 140px;
-      height: 140px;
-    }
-
-    .section-president p {
-      font-size: 1em;
-    }
-
-    #presentation h2,
-    #dons h3 {
-      font-size: 1.5em;
-    }
-
-    #presentation p,
-    #dons p {
-      font-size: 1em;
-    }
-
-    .btn-don {
-      padding: 10px 20px;
-      font-size: 1em;
-    }
-
-    footer {
-      font-size: 0.9em;
-      padding: 15px 10px;
-    }
-
-    .carousel button {
-      font-size: 1.2em;
-      padding: 8px;
-    }
-
-    .btn {
-      padding: 8px 16px;
-    }
-
-    .tag {
-      font-size: 0.7em;
-      padding: 5px 10px;
-    }
-  }
-
-  @media (max-width: 480px) {
-    nav a {
-      display: block;
-      padding: 12px;
-      font-size: 1em;
-    }
-
-    .carousel-container {
-      height: 200px;
-    }
-
-    .event-card img {
-      height: 140px;
-    }
-
-    .btn,
-    .btn-don {
-      width: 100%;
-      box-sizing: border-box;
-    }
-
-    .president-container {
-      text-align: center;
-    }
-  }
-
-  @media (min-width: 768px) {
-    nav {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-    }
-
-    .event-grid {
-      flex-direction: row;
-      justify-content: center;
-    }
-
-    .contenu-central {
-      display: flex;
-      gap: 40px;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-
-    .carousel-container,
-    .event-grid {
-      max-width: 50%;
-    }
-
-    .section-president .president-container {
-      display: flex;
-      align-items: center;
-      gap: 30px;
-      text-align: left;
-      max-width: 800px;
-      margin: auto;
-    }
-
-    .president-photo {
-      margin: 0;
-    }
-
-    .btn {
-      width: auto;
-    }
-  }
-
-  @media (min-width: 1024px) {
-    #banniere-principale {
-      height: 500px;
-      font-size: 2.5em;
-    }
-  }
-
-  .carousel img {
-  opacity: 0;
-  transition: opacity 0.5s ease;
-  position: absolute;
-  border: 2px solid red; /* debug visuel temporaire */
-}
-
-.carousel img.active {
-  opacity: 1;
-}
-
-</style>
+  </style>
 </head>
 
 <body>
@@ -539,10 +200,9 @@
     
     <div class="bloc">
         <h3>Notre histoire</h3>
-        <p>Tout a commencé lors d’un repas entre amis, loin de l’île intense. Entre un rougail saucisse et quelques notes de maloya, une idée est née : et si on créait un espace pour nous retrouver, partager, transmettre ce qui fait notre fierté ?
-            C’est ainsi qu’est née notre association. Pour faire vivre la culture réunionnaise ici, ensemble, à travers des rencontres, de la musique, de la cuisine et surtout : du partage.</p>
-      </div>
-</section>
+        <p>Tout a commencé lors d’un repas entre amis, loin de l’île intense. Entre un rougail saucisse et quelques notes de maloya, une idée est née : et si on créait un espace pour nous retrouver, partager, transmettre ce qui fait notre fierté ?</p>
+    </div>
+  </section>
 
  <section id="evenement" class="contenu-central">
   <!-- Carrousel à gauche -->
@@ -550,72 +210,35 @@
     <div class="carousel">
       <img src="img1.JPG" alt="Photo 1" class="active">
       <img src="img2.JPG" alt="Photo 2"> 
-      <img src="img3.JPG" alt="Photo 3" >
-      <img src="img4.JPG" alt="Photo 4" >
-      <img src="img5.JPG" alt="Photo 5" >
+      <img src="img3.JPG" alt="Photo 3">
+      <img src="img4.JPG" alt="Photo 4">
+      <img src="img5.JPG" alt="Photo 5">
       <img src="img6.JPG" alt="Photo 6"> 
-      <img src="img7.JPG" alt="Photo 7" >
-      <img src="img8.JPG" alt="Photo 8" >
-      <img src="img9.JPG" alt="Photo 9" >
-      <img src="img10.JPG" alt="Photo 10" >
+      <img src="img7.JPG" alt="Photo 7">
+      <img src="img8.JPG" alt="Photo 8">
+      <img src="img9.JPG" alt="Photo 9">
+      <img src="img10.JPG" alt="Photo 10">
      <button class="prev">❮</button>
      <button class="next">❯</button>
     </div>
   </div>
 </section>
 
-  
-    <!-- Événement à droite -->
-    <div class="event-grid">
-      <div class="event-card">
-        <span class="tag">🎉 Événement</span>
-        <img src="picnic.jpg" alt="Pique-nique créole" />
-        <h3>Pique-nique partage Réunionnais</h3>
-        <p class="date">📅 Samedi 11 mai</p>
-        <p class="lieu">📍 Parc de Béziers</p>
-        <p class="desc">Apportez votre marmite, partagez un moment convivial autour de la musique réunionnaise !</p>
-        <button class="btn">Je participe</button>
-      </div>
+  <!-- Événements à droite -->
+  <div class="event-grid">
+    <div class="event-card">
+      <span class="tag">🎉 Événement</span>
+      <img src="picnic.jpg" alt="Pique-nique créole" />
+      <h3>Pique-nique partage Réunionnais</h3>
+      <p class="date">📅 Samedi 11 mai</p>
+      <p class="lieu">📍 Parc de Béziers</p>
+      <p class="desc">Apportez votre marmite, partagez un moment convivial autour de la musique réunionnaise !</p>
+      <button class="btn">Je participe</button>
     </div>
-  </section>
-
-
-  <section class="section-president">
-    <div class="president-container">
-      <img src="Olivier Lebon.jpg" alt="Photo du président" class="president-photo" />
-      <div class="president-text">
-        <p>« Notre association est née de la volonté de faire vivre la culture réunionnaise à Béziers. Chaque don est un pas de plus vers ce rêve collectif. Merci pour votre soutien. »</p>
-        <p><strong>Olivier Lebon, Président de l'association</strong></p>
-      </div>
-    </div>
-  </section>
-
- <section id="dons" class="section-don">
-    <div class="don-content">
-      <h2>Soutenez notre association 🌿</h2>
-      <p>Vos dons nous permettent de créer des événements, promouvoir la culture réunionnaise et faire vivre notre communauté à Béziers.</p>
-      <a href="don.html" class="btn-don">Faire un don 🤝</a>
-    </div>
-  </section>
-  
-  <footer>
-    <div class="footer-content">
-    <p>&copy; 2025 Association Nou lé là - Tous droits réservés  <a href="mailto:contact@monsite.com" class="contact-link">Nous contacter</a>
-
-        <a href="https://www.facebook.com/association.nou.le.la" target="_blank" class="facebook-fixed-icon" aria-label="Facebook">
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 48 48">
-              <path fill="#1877F2" d="M24 4C12.96 4 4 12.96 4 24c0 9.96 7.44 18.2 17.06 19.74V30.7h-5.14v-6.7h5.14v-5.1c0-5.08 3.03-7.9 7.67-7.9 2.22 0 4.53.4 4.53.4v4.96h-2.55c-2.51 0-3.3 1.55-3.3 3.14v4.5h5.61l-.9 6.7h-4.7v13.1C36.56 42.2 44 33.96 44 24c0-11.04-8.96-20-20-20z"/>
-              <path fill="#FFF" d="M30.03 30.7l.9-6.7h-5.61v-4.5c0-1.59.79-3.14 3.3-3.14h2.55V11.4s-2.31-.4-4.53-.4c-4.64 0-7.67 2.82-7.67 7.9v5.1h-5.14v6.7h5.14v13.04c1.04.17 2.1.26 3.18.26s2.14-.09 3.18-.26V30.7h4.7z"/>
-            </svg>
-          </a>
-        </div>
   </div>
-</footer>
-  
 
 <script>
   const images = document.querySelectorAll(".carousel img");
-  console.log(images.length);
   const prevBtn = document.querySelector(".carousel .prev");
   const nextBtn = document.querySelector(".carousel .next");
   let currentIndex = 0;
@@ -644,7 +267,5 @@
   }, 5000); // change toutes les 5 sec
 </script>
 </body>
-
 </html>
-
 
