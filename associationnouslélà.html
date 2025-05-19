@@ -510,6 +510,18 @@
       font-size: 2.5em;
     }
   }
+
+  .carousel img {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  position: absolute;
+  border: 2px solid red; /* debug visuel temporaire */
+}
+
+.carousel img.active {
+  opacity: 1;
+}
+
 </style>
 </head>
 
@@ -554,8 +566,8 @@
       <img src="img8.JPG" alt="Photo 8" >
       <img src="img9.JPG" alt="Photo 9" >
       <img src="img10.JPG" alt="Photo 10" >
-      <button class="prev">&#10094;</button>
-      <button class="next">&#10095;</button>
+     <button class="prev">❮</button>
+     <button class="next">❯</button>
     </div>
   </div>
 </section>
@@ -610,6 +622,7 @@
   
 
 <script>
+  console.log("Script chargé");
   const images = document.querySelectorAll(".carousel img");
   const prevBtn = document.querySelector(".carousel .prev");
   const nextBtn = document.querySelector(".carousel .next");
@@ -638,9 +651,6 @@
     showImage(currentIndex);
   }, 5000); // change toutes les 5 sec
 </script>
-
-
-
 </body>
 
 </html>
